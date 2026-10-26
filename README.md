@@ -74,3 +74,13 @@ v0.7 已通过 45 项本地离线测试，以及新用户 Agent 的 34 次独立
 [ZIP 校验值](downloads/SHA256SUMS)：`047788a0f5027526f5b0e0a55d0fa0f76edc33ba33805354daaaed8db315fa35`。
 
 本项目是敏敏整理的独立接入引导包，非笔记同步助手、飞书或 WorkBuddy 官方产品。官方教程图片与用户提供的隐私处理图均保留来源说明。本仓库首页结构参考 [dbskill](https://github.com/dontbesilent2025/dbskill) 的“用途 → 快速开始 → 使用方式 → 帮助”组织方式，正文为本项目编写。
+
+<!-- minmin-contact:start -->
+## 联系敏敏
+
+使用中有问题，或想交流新想法？欢迎联系敏敏。
+
+<img src="https://tools.minmin11538.cn/notehelper/contact/wechat-min11538.jpg" width="180" alt="敏敏的微信二维码">
+
+微信：**min11538** · [敏敏的个人主页](https://me.minmin11538.cn/)
+<!-- minmin-contact:end -->
