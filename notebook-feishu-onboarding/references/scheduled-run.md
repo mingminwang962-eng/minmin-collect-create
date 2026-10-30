@@ -4,6 +4,8 @@
 
 ## 本轮执行
 
+运行时为 v0.9.6 时，先确认 job.board 中的选题表已存在用途一致的普通文本字段“数据获取说明”；旧表按 recording-rules.md 的升级步骤只补这一列及默认视图可见项。不要向缺字段的表写入，不能为升级重建表或任务。
+
 开始时生成本轮唯一 owner，执行 run-claim --owner 实际owner，取得整轮运行锁。此后每条命令均在子命令前加 --owner 实际owner。正常结束或捕获异常后执行 run-release --owner 实际owner；中断残留先核对原进程，不强行抢锁。单步 .sync.lock 不能替代整轮锁。
 
 手动指定一条历史资料时，用 select --id 实际ID --query 已确认搜索词 --after 定位页偏移（首页为0）加入队列；已 done 就复用已有文档和索引，不重新创建。普通“拉取一下”和定时都执行 scan 发现新增。
@@ -15,7 +17,7 @@
 5. CLI 参数按本机当前官方 skill/帮助核对。原样导入 Markdown 可用 docs +create --doc-format markdown --content @./out/实际文件.md，设置实际标题、实际 --parent-token 或已核实的 --parent-position；CWD 必须为本工作目录，文件参数用相对路径。不要把这里的示例当作可直接运行的完整命令。CLI 错误、高风险门禁或缺权限时停下报告真实原因，不在无人值守任务中放开权限或加确认旗标。
 6. 创建成功后立刻记录实际 document.url，执行 bind --id 实际ID --doc-url 实际URL。创建返回 ok=true 仍需检查 warnings；有降级不直接记完成。创建超时、响应不明、进程中断时保持 creating，执行“中断恢复”。
 7. 按当前 lark-doc 使用 docs +fetch --doc 实际URL --doc-format markdown --detail full --as user 全文读回，把原始成功 JSON 回执保存在本目录内的新文件（如 receipts/本轮唯一名.json）。不要只把退出码或摘要当读回。核对 ID/URL、标题、正文头中尾与完整性、来源、图片数量与实际内容；必要时按官方媒体说明检查图片。没有图片就核对确实没有；有图片缺失或正文只有简介时不能勾选验证通过。不要为通过检查删掉原文中的图片。
-8. 正文核对后还要保存选题索引：先在 job.board 的选题表按备注中的 NoteHelper ID:实际ID 查找已有记录。调用 index-start --id 实际ID；只有 new_claim=true 且没有已有记录才可创建。用 runtime/record_plan.py 生成新记录字段；按本条实际来源核验平台、发布时间和参考互动量，事实保存在私有 facts JSON 中，未知项留空。用官方 Base record-upsert 创建；立刻 bind-index --id 实际ID --record-id 返回记录ID。封面用附件接口上传，保存上传回执；中断先看当前附件避免重传。回读完整索引 JSON 到 receipts，核对来源ID、标题、文档链接、默认待研究/待定、已知来源字段和封面。已有记录不重置状态、改写和关联版本；index-start 返回 false 但未绑定时先按来源ID查实际结果，禁止直接重建。
+8. 正文核对后还要保存选题索引：先在 job.board 的选题表按备注中的 NoteHelper ID:实际ID 查找已有记录。调用 index-start --id 实际ID；只有 new_claim=true 且没有已有记录才可创建。把 job.items 中本条 metadata（含 publishedAt）保存为私有 article JSON，交给 runtime/record_plan.py 生成新记录字段；发布时间直接取有效 publishedAt，不能拿 savedAt 代替。平台及参考互动量按本条实际来源核验，事实保存在私有 facts JSON 中，未知项留空、不填0。缺失原因未核实时默认“本条未获取到”；确认暂不支持或确有临时失败且已安排真实有限重试时，按 recording-rules.md 在 facts 的“未获取原因”逐项填写。record_plan.py 自动生成“数据获取说明”，回读时核对所列缺失字段和原因与实际数据一致。用官方 Base record-upsert 创建；立刻 bind-index --id 实际ID --record-id 返回记录ID。封面用附件接口上传，保存上传回执；中断先看当前附件避免重传。回读完整索引 JSON 到 receipts，核对来源ID、标题、文档链接、默认待研究/待定、已知来源字段和封面。已有记录不重置状态、改写和关联版本；index-start 返回 false 但未绑定时先按来源ID查实际结果，禁止直接重建。用户明确要求旧记录补全时，按 recording-rules.md 的“已有用户升级与空字段补全”执行，不重新创建或覆盖。
 
 9. 实际核对通过后执行 complete --id 实际ID --readback 回执相对路径 --content-checked --images-checked --index-readback 索引回执相对路径。脚本还会验证回执 ok、user 身份、document_id 与绑定 URL 一致、正文非空，再将该条记 done。完整内容和图片核对由 Agent 负责，这两个旗标不能预填或冒充自动验收。
 10. 单项图片/正文/索引核对不通过、或 creating 无法确认时，保留状态并记入本轮跳过列表，继续其它资料；认证、网络、权限、全局配置或锁错误则停止本轮，不用跳过掩盖。可以在宿主本轮时间/费用预算内重复 next；快到超时时不要再领取新项，队列留到下次。最终报告本轮成功数量和实际文档链接；无新增保持安静。失败、权限待确认、写入不明或需要用户介入时明确提示，不能写“自动同步成功”。宿主支持失败通知时只在需要处理的状态通知。

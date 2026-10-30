@@ -1,0 +1,11 @@
+{
+  "version": "0.9.6",
+  "download_url": "https://tools.minmin11538.cn/notehelper/downloads/%E7%AC%94%E8%AE%B0%E5%90%8C%E6%AD%A5%E9%A3%9E%E4%B9%A6%E6%8E%A5%E5%85%A5%E5%8C%85-v0.9.6.zip",
+  "bytes": 4207107,
+  "sha256": "f85f5202427292611bea48d3c9b3927374c0148ddee8e356e755a5306a95c776",
+  "archive_root": "笔记同步飞书接入包",
+  "skill_entry": "notebook-feishu-onboarding/SKILL.md",
+  "guide_url": "https://tools.minmin11538.cn/notehelper/guide.html",
+  "instructions_url": "https://tools.minmin11538.cn/notehelper/install.md",
+  "released_at": "2026-10-31"
+}

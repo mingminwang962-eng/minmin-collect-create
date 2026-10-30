@@ -137,7 +137,7 @@ def configure(config, replace, from_stdin=False):
 def search(key, query, limit, after, content, note_id=None):
     if content and (not note_id or limit != 1):
         raise ClientError("读取正文需指定 --id 和 --limit 1，并用元信息中的 result_after 设置 --after。")
-    fields = "id title url author savedAt" + (" content" if content else "")
+    fields = "id title url author savedAt publishedAt" + (" content" if content else "")
     # Use the exact variables-based convention published by the official skill.
     document = ('query { search(query: "", first: 10, after: 0) { edges { node { '
                 + fields + ' } } pageInfo { totalCount hasNextPage } } }')

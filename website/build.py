@@ -6,18 +6,18 @@ import markdown
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'website' / 'dist'
 BASE = 'https://tools.minmin11538.cn/notehelper/'
-ZIP = '笔记同步飞书接入包-v0.9.3.zip'
-EXPECTED = '047788a0f5027526f5b0e0a55d0fa0f76edc33ba33805354daaaed8db315fa35'
+ZIP = '笔记同步飞书接入包-v0.9.6.zip'
+EXPECTED = 'f85f5202427292611bea48d3c9b3927374c0148ddee8e356e755a5306a95c776'
 assert hashlib.sha256((ROOT / 'downloads' / ZIP).read_bytes()).hexdigest() == EXPECTED
 OUT.mkdir(exist_ok=True)
-for name in ['index.html', 'styles.css']:
+for name in ['index.html', 'styles.css', 'shared-header.css']:
     if name == 'index.html':
         page = (ROOT / 'website' / name).read_text()
         page = re.sub(r'(<code class="digest">)[a-f0-9]{64}(</code>)', lambda m: m[1] + EXPECTED + m[2], page)
         (OUT / name).write_text(page)
     else:
         shutil.copyfile(ROOT / 'website' / name, OUT / name)
-for name in ['downloads', 'notebook-feishu-onboarding']:
+for name in ['downloads', 'notebook-feishu-onboarding', 'contact']:
     shutil.copytree(ROOT / name, OUT / name, dirs_exist_ok=True, ignore=shutil.ignore_patterns('__pycache__', '*.pyc', '.DS_Store'))
 shutil.copyfile(ROOT / '发给Agent的启动说明.md', OUT / '发给Agent的启动说明.md')
 
@@ -56,7 +56,7 @@ manual = ROOT / 'notebook-feishu-onboarding/references/grouped-messages.md'
 render(manual, OUT / 'guide.html')
 render(ROOT / 'notebook-feishu-onboarding/references/sources.md', OUT / 'sources.html')
 (OUT / 'guide.md').write_text(rewrite(manual, OUT / 'guide.md', manual.read_text(), html_links=False))
-release = {'version': '0.9.3', 'download_url': BASE + 'downloads/' + quote(ZIP), 'bytes': (ROOT / 'downloads' / ZIP).stat().st_size, 'sha256': EXPECTED, 'archive_root': '笔记同步飞书接入包', 'skill_entry': 'notebook-feishu-onboarding/SKILL.md', 'guide_url': BASE + 'guide.html', 'instructions_url': BASE + 'install.md'}
+release = {'version': '0.9.6', 'download_url': BASE + 'downloads/' + quote(ZIP), 'bytes': (ROOT / 'downloads' / ZIP).stat().st_size, 'sha256': EXPECTED, 'archive_root': '笔记同步飞书接入包', 'skill_entry': 'notebook-feishu-onboarding/SKILL.md', 'guide_url': BASE + 'guide.html', 'instructions_url': BASE + 'install.md', 'released_at': '2026-10-31'}
 (OUT / 'release.json').write_text(json.dumps(release, ensure_ascii=False, indent=2) + '\n')
 shutil.copyfile(ROOT / 'website' / 'install.md', OUT / 'install.md')
 manifest = {str(p.relative_to(OUT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.rglob('*')) if p.is_file() and p.name != 'files.sha256.json'}
