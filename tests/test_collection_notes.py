@@ -4,7 +4,7 @@ import sys
 import unittest
 from pathlib import Path
 
-SCRIPTS = Path(__file__).resolve().parents[1] / 'notebook-feishu-onboarding/scripts'
+SCRIPTS = Path(__file__).resolve().parents[1] / 'minmin-collect-create/scripts'
 sys.path.insert(0, str(SCRIPTS))
 from notehelper_client import ClientError
 from record_plan import topic_fields

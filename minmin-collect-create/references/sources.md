@@ -28,7 +28,7 @@
 - 当前本机帮助确认：`auth login --recommend` 等同全业务域；旧图文里的“推荐权限”表述不能当成本包的授权范围。
 - 当前帮助确认：OpenClaw/Hermes 中优先使用 `config bind`；绑定前确认目标应用和身份策略。
 - npm 启动器会将 `lark-cli install --help` 交给安装向导，不能把它当只读检查。本次核对曾触发升级尝试，已停止，原 1.0.96 CLI 可用。
-- 官方开发者指引明确要求显式 UA；本包 v0.2 Python 客户端设为 `notebook-feishu-onboarding/0.2`。
+- 官方开发者指引明确要求显式 UA；本包 v0.2 Python 客户端设为 `minmin-collect-create/0.2`。
 
 截图只是对应时点的示例，授权链接/二维码每个用户必须由其 Agent 当场生成。不将敏敏的飞书链接、应用凭证、私人笔记、日志或账号配置放进此包。
 
@@ -58,7 +58,7 @@
 
 ## v0.6 复测修正
 
-移除图解中开通后立即回复的旧话术；置顶图增加“已置顶，不用点取消”横幅。客户端增加正文必填的 --id、单条 --limit 1、元信息 result_after 定位及响应ID核对；不符合时不输出/导出，不继续正文分页。UA 更新为 notebook-feishu-onboarding/0.6。
+移除图解中开通后立即回复的旧话术；置顶图增加“已置顶，不用点取消”横幅。客户端增加正文必填的 --id、单条 --limit 1、元信息 result_after 定位及响应ID核对；不符合时不输出/导出，不继续正文分页。UA 更新为 minmin-collect-create/0.6。
 
 2026-10-22 重新打开 [官方Skill](https://clawhub.ai/notesynchelper/skills/notehelper)：当前公布 variables.query/first/after 搜索分页，未公布独立按ID取正文的接口。本包采用已公布分页取选定位置一条后严格核对ID，不虚构ID过滤接口；服务意外返回多条时拒绝结果，不能声称服务端绝不会返回其它正文。真实服务对单条分页的行为仍需账号实测。
 

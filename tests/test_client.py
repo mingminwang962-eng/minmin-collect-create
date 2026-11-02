@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import patch
 from urllib.error import HTTPError
 
-SOURCE = Path(__file__).resolve().parents[1] / "notebook-feishu-onboarding/scripts/notehelper_client.py"
+SOURCE = Path(__file__).resolve().parents[1] / "minmin-collect-create/scripts/notehelper_client.py"
 spec = importlib.util.spec_from_file_location("client", SOURCE)
 client = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(client)

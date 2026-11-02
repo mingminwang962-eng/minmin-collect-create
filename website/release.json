@@ -1,11 +1,11 @@
 {
-  "version": "0.9.6",
-  "download_url": "https://tools.minmin11538.cn/notehelper/downloads/%E7%AC%94%E8%AE%B0%E5%90%8C%E6%AD%A5%E9%A3%9E%E4%B9%A6%E6%8E%A5%E5%85%A5%E5%8C%85-v0.9.6.zip",
-  "bytes": 4207107,
-  "sha256": "f85f5202427292611bea48d3c9b3927374c0148ddee8e356e755a5306a95c776",
-  "archive_root": "笔记同步飞书接入包",
-  "skill_entry": "notebook-feishu-onboarding/SKILL.md",
+  "version": "0.9.7",
+  "download_url": "https://tools.minmin11538.cn/notehelper/downloads/%E6%95%8F%E6%95%8F%C2%B7%E6%94%B6%E8%97%8F%E5%88%9B%E4%BD%9C%E5%8A%A9%E6%89%8B-v0.9.7.zip",
+  "bytes": 4211463,
+  "sha256": "4cf4056e8aec0360617ac6a6a4a95a45c4e32ee453649c77e9bf73a9adabe3bc",
+  "archive_root": "敏敏·收藏创作助手",
+  "skill_entry": "minmin-collect-create/SKILL.md",
   "guide_url": "https://tools.minmin11538.cn/notehelper/guide.html",
   "instructions_url": "https://tools.minmin11538.cn/notehelper/install.md",
-  "released_at": "2026-10-31"
+  "released_at": "2026-11-02"
 }

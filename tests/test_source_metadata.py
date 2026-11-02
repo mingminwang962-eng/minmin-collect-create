@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-SCRIPTS = Path(__file__).resolve().parents[1] / 'notebook-feishu-onboarding/scripts'
+SCRIPTS = Path(__file__).resolve().parents[1] / 'minmin-collect-create/scripts'
 sys.path.insert(0, str(SCRIPTS))
 import notehelper_client as client
 import record_plan

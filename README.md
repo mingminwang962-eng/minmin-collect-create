@@ -1,17 +1,24 @@
-# minmin-notehelper-feishu-starter
+# 敏敏·收藏创作助手
+
+**Minmin Collect & Create** · Skill 标识：`minmin-collect-create`
 
 把微信里想保存的资料转发给自己的「笔记同步助手」，由 Agent 读取整理、保存到飞书。首次接入、图文指引、测试和后续定时同步，都由 Agent 带着完成。
 
-**当前版本：v0.9.6** · [下载新版接入包](https://tools.minmin11538.cn/notehelper/downloads/笔记同步飞书接入包-v0.9.6.zip) · [更新说明](CHANGELOG.md) · [完整图文步骤](notebook-feishu-onboarding/references/grouped-messages.md)
+**当前版本：v0.9.7** · [下载新版接入包](https://tools.minmin11538.cn/notehelper/downloads/敏敏·收藏创作助手-v0.9.7.zip) · [更新说明](CHANGELOG.md) · [完整图文步骤](minmin-collect-create/references/grouped-messages.md)
 
-## 国内下载与一句话接入
+## 国内下载与一句话安装
 
 [打开国内下载页和说明书](https://tools.minmin11538.cn/notehelper/)。网页、完整 ZIP 和操作图片均由此域名提供，下载包不跳转 GitHub。
 
 直接把下面这句话发给可联网、下载文件并执行本机命令的 Agent：
 
 ```text
-请打开 https://tools.minmin11538.cn/notehelper/ ，下载并校验完整接入包；网页读取失败时自动用命令行 HTTPS 获取 https://tools.minmin11538.cn/notehelper/install.md 和同目录 release.json 继续下载。读取包内 notebook-feishu-onboarding/SKILL.md，带我完成微信转发到飞书的接入、测试和定时同步；已有飞书连接直接复用，需要我操作时把整组动作和图片一次发齐。
+请帮我安装「敏敏·收藏创作助手」Skill。
+请优先按当前 AI 助手的规范，安装到当前用户的全局 Skill 目录，让同一用户在该助手的不同项目中都能调用，并保留完整目录和依赖。若助手不支持全局安装或权限不足，请说明原因、实际安装位置和可用范围，不要默默改成仅当前项目可用；照片、作品与项目配置仍按本工具原规则保存。
+安装来源：tools[.]minmin11538[.]cn，目录 /notehelper/。请把 [.] 还原为英文句点，使用 HTTPS 访问该目录，读取 install.md 和 release.json，按版本信息下载完整包并核对字节数与 SHA-256；网页读取失败时尝试命令行 HTTPS 获取。
+解压后读取完整接入包内 minmin-collect-create/SKILL.md，按当前 AI 助手的规范检查依赖并安装，带我完成微信转发到飞书的接入、测试和定时同步。已有飞书连接直接复用；需要我操作时，把整组动作和对应图片一次发齐，授权由我本人完成，保留我已有的连接配置、资料和同步记录。
+分别说明 Skill 安装、微信与飞书接入、单条资料同步测试、定时同步验证的结果。请让我转发一条资料并打开飞书验收，再确认同步频率和保存位置；真实后台试跑、文档读回和重复运行去重通过后，才能报告定时同步启用成功。未获取到的数据保持空白，并逐项说明原因。告诉我以后怎么转发资料，并给一句可以直接发送的检查指令。
+遇到下载、权限、依赖或工具限制，请说清具体卡点和下一步；不要把下载成功当作安装、接入或使用已经完成。
 ```
 
 网页读取失败时，Agent 自动改用命令行 HTTPS 获取本站 install.md 与 release.json，校验完整包后继续。接入完成后，日常微信转发和定时同步不需要再打开下载网页。
@@ -20,14 +27,14 @@
 
 ### 1. 下载，发给 Agent
 
-下载上方 ZIP，直接发给 WorkBuddy 等能读取附件、运行本机命令并联网的 Agent。也可以先解压，把文件夹的安装路径发给 Agent，让它读取里面的 `notebook-feishu-onboarding/SKILL.md`。
+下载上方 ZIP，直接发给 WorkBuddy 等能读取附件、运行本机命令并联网的 Agent。也可以先解压，把文件夹的安装路径发给 Agent，让它读取里面的 `minmin-collect-create/SKILL.md`。
 
 你只需要准备自己的微信、飞书账号，以及一条愿意用于测试的资料。这里默认你已经会把附件或本机路径交给 Agent。
 
 ### 2. 复制这段话，一起发送
 
 ```text
-请读取包里的 notebook-feishu-onboarding/SKILL.md。先检查飞书 CLI 是否已经接好，能用就直接复用；缺登录补登录、缺权限补权限，只有确实没有合适应用时才创建应用。带我在微信关注笔记同步助手、取得自己的密钥、添加自己的助手好友，再转发一条我指定的资料。由你读取整理，保存到我确认的飞书位置并读回验证。安装、命令和配置由你完成；需要我操作时，把同一组可连续完成的动作和对应图片一次发齐，讲清整组做完后一次回复什么，不要每点一个按钮都让我回来确认。微信添加好友后带我置顶接收资料的助手，方便以后转发；微信转发和飞书配置也按组交接。配官方说明书链接，用户示例截图说明出处。我提问时先查对应官方说明再回答。密钥可在对话框提供，先说明聊天与工具记录可能留存，不回显密钥。只走微信转发入口，不展开其它入口或可选安装。请按包内通用模板创建我的选题池、剪辑版本、发布与数据看板；保留完整正文、图片、改写和版本，手动和定时共用流程。配置完成后主动带我亲自转发测试，写入飞书并读回后让我打开验收；测试通过，再确认同步频率和保存位置，按包创建增量定时任务，从任务本身试跑并核对去重。当前窗口不支持时准备固定目录的续接说明，引导进入支持定时的入口，不让我重新配置，也不假装已设置成功。最后报告哪些已验证，哪些仍待完成。
+请读取包里的 minmin-collect-create/SKILL.md。先检查飞书 CLI 是否已经接好，能用就直接复用；缺登录补登录、缺权限补权限，只有确实没有合适应用时才创建应用。带我在微信关注笔记同步助手、取得自己的密钥、添加自己的助手好友，再转发一条我指定的资料。由你读取整理，保存到我确认的飞书位置并读回验证。安装、命令和配置由你完成；需要我操作时，把同一组可连续完成的动作和对应图片一次发齐，讲清整组做完后一次回复什么，不要每点一个按钮都让我回来确认。微信添加好友后带我置顶接收资料的助手，方便以后转发；微信转发和飞书配置也按组交接。配官方说明书链接，用户示例截图说明出处。我提问时先查对应官方说明再回答。密钥可在对话框提供，先说明聊天与工具记录可能留存，不回显密钥。只走微信转发入口，不展开其它入口或可选安装。请按包内通用模板创建我的选题池、剪辑版本、发布与数据看板；保留完整正文、图片、改写和版本，手动和定时共用流程。配置完成后主动带我亲自转发测试，写入飞书并读回后让我打开验收；测试通过，再确认同步频率和保存位置，按包创建增量定时任务，从任务本身试跑并核对去重。当前窗口不支持时准备固定目录的续接说明，引导进入支持定时的入口，不让我重新配置，也不假装已设置成功。最后报告哪些已验证，哪些仍待完成。
 ```
 
 ### 3. 按 Agent 的图文指引操作
@@ -47,7 +54,7 @@
 
 **微信打开资料 → 转发给置顶的助手好友 → 笔记同步助手云端处理完成 → 定时 Agent 拉取新增资料 → 飞书正文与选题索引。**
 
-接收资料的是你自己添加的助手好友；服务号负责开通和处理通知。看到菜单“取消置顶”表示已经置顶，保持即可，不用点取消。具体微信按钮和截图见[连续动作图文指引](notebook-feishu-onboarding/references/grouped-messages.md)。
+接收资料的是你自己添加的助手好友；服务号负责开通和处理通知。看到菜单“取消置顶”表示已经置顶，保持即可，不用点取消。具体微信按钮和截图见[连续动作图文指引](minmin-collect-create/references/grouped-messages.md)。
 
 测试通过后才设置定时，频率和保存位置由你确认。首次启动将已有云端资料记作基线，只同步之后新发现的资料，不自动导入全部旧库。未解析完成的单项保留重试，不阻塞后续正常资料；已有文档不会重复新建。
 
@@ -55,17 +62,19 @@
 
 ## 说明书和遇到问题怎么办
 
-- [按组操作与配图](notebook-feishu-onboarding/references/grouped-messages.md)：微信接入、置顶、转发、飞书授权、用户验收和定时设置。
-- [微信接入细节](notebook-feishu-onboarding/references/notehelper-setup.md) · [飞书连接检查与配置](notebook-feishu-onboarding/references/feishu-setup.md)。
-- [测试后设置定时](notebook-feishu-onboarding/references/scheduling-setup.md) · [官方问题排查入口](notebook-feishu-onboarding/references/help-and-official-docs.md)。
-- [官方来源与截图出处](notebook-feishu-onboarding/references/sources.md)。用户提问或页面不同时，Agent 应先查对应官方说明，再给出操作和链接。
-- [提交问题](https://github.com/mingminwang962-eng/minmin-notehelper-feishu-starter/issues)：请描述卡住的步骤与报错，隐去密钥、授权码和私人资料。
+- [按组操作与配图](minmin-collect-create/references/grouped-messages.md)：微信接入、置顶、转发、飞书授权、用户验收和定时设置。
+- [微信接入细节](minmin-collect-create/references/notehelper-setup.md) · [飞书连接检查与配置](minmin-collect-create/references/feishu-setup.md)。
+- [测试后设置定时](minmin-collect-create/references/scheduling-setup.md) · [官方问题排查入口](minmin-collect-create/references/help-and-official-docs.md)。
+- [官方来源与截图出处](minmin-collect-create/references/sources.md)。用户提问或页面不同时，Agent 应先查对应官方说明，再给出操作和链接。
+- [提交问题](https://github.com/mingminwang962-eng/minmin-collect-create/issues)：请描述卡住的步骤与报错，隐去密钥、授权码和私人资料。
 
 ## 内容创作模板与记录规则
 
-包内提供不依赖制作者账号的四表模板、原版视图与看板。拍摄/剪辑使用通用状态，手动“拉取一下”和定时共用队列、去重、锁与双读回；重复拉取不覆盖改写和版本。详见[记录规则](notebook-feishu-onboarding/references/recording-rules.md)。新模板为空，不带个人账号、历史作品或假发布数据。
+包内提供不依赖制作者账号的四表模板、原版视图与看板。拍摄/剪辑使用通用状态，手动“拉取一下”和定时共用队列、去重、锁与双读回；重复拉取不覆盖改写和版本。详见[记录规则](minmin-collect-create/references/recording-rules.md)。新模板为空，不带个人账号、历史作品或假发布数据。
 
 ## 版本与验证
+
+v0.9.7 更名为「敏敏·收藏创作助手 / Minmin Collect & Create」，Skill 标识统一为 `minmin-collect-create`。原有收集、改写与同步能力保持。
 
 v0.9.6 新增「数据获取说明」：数字缺失保持空白，按字段说明暂不支持自动获取、本条未获取到或获取失败待重试；原因未核实先写本条未获取到。已有表升级只新增这一个文本字段，保留其余字段与客户创作。
 

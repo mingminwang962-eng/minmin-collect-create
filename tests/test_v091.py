@@ -2,7 +2,7 @@
 import contextlib, hashlib, io, json, sys, tempfile, unittest
 from pathlib import Path
 from unittest.mock import patch
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'notebook-feishu-onboarding/scripts'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'minmin-collect-create/scripts'))
 import sync_queue as q
 
 class PatchTests(unittest.TestCase):

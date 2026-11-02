@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>微信资料存进飞书｜敏敏笔记同步接入包</title>
-<meta name="description" content="复制一句话给 Agent，带你完成微信笔记同步助手与飞书接入。含完整说明书、操作图片与 v0.9.6 下载包。">
+<title>敏敏·收藏创作助手｜Minmin Collect &amp; Create</title>
+<meta name="description" content="敏敏·收藏创作助手（Minmin Collect &amp; Create）：微信收集、一句话拉取、飞书选题管理与交互式改写。含完整说明书、操作图片与 v0.9.7 下载包。">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="shared-header.css?v=20261024-five"><script src="/minmin-tool-stats-20261026.js?v=copy-20261026" defer></script>
 <link rel="stylesheet" href="contact/contact-v1.css">
 <script src="contact/contact-v1.js" defer></script>
 <!-- minmin-install-guide:start -->
 <link rel="stylesheet" href="contact/install-guide-20261026.css">
-<script src="contact/install-guide-20261026.js" defer></script>
+<script src="contact/install-guide-20261026.js?v=20261102-collect-create" defer></script>
 <!-- minmin-install-guide:end -->
 </head>
 <body class="readme-layout">
@@ -52,17 +52,22 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 <!-- minmin-home-return:end -->
-<header class="minmin-header" style="--nav-accent:#0969da;--nav-tint:#f6f8fa;--nav-muted:#59636e;--nav-line:#d1d9e0"><div class="minmin-header-row"><a class="minmin-brand" href="/notehelper/">敏敏 <span>/ 笔记同步</span></a><nav class="minmin-products" aria-label="敏敏的工具"><a href="/notehelper/" aria-current="page">笔记同步</a><a href="/matrix/">矩阵工作台</a><a href="/covers/">封面工作室</a><a href="/stickers/">真人表情包</a><a href="/ip/">个人 IP 形象</a></nav></div><nav class="minmin-local" aria-label="当前工具"><a href="guide.html">图文说明书 ↗</a><a href="notebook-feishu-onboarding/references/recording-rules.html">模板与记录规则 ↗</a></nav></header>
+<header class="minmin-header" style="--nav-accent:#0969da;--nav-tint:#f6f8fa;--nav-muted:#59636e;--nav-line:#d1d9e0"><div class="minmin-header-row"><a class="minmin-brand" href="/notehelper/">敏敏 <span>/ 收藏创作助手</span></a><nav class="minmin-products" aria-label="敏敏的工具"><a href="/notehelper/" aria-current="page">收藏创作助手</a><a href="/matrix/">矩阵工作台</a><a href="/covers/">封面工作室</a><a href="/stickers/">真人表情包</a><a href="/ip/">个人 IP 形象</a></nav></div><nav class="minmin-local" aria-label="当前工具"><a href="guide.html">图文说明书 ↗</a><a href="minmin-collect-create/references/recording-rules.html">模板与记录规则 ↗</a></nav></header>
 <main>
 <section class="hero">
-<div class="intro"><p class="eyebrow">微信 → 笔记同步助手 → 飞书 <span class="version">v0.9.6</span></p>
-<h1>微信转发的资料，存进你的飞书。</h1>
-<p class="lead">把下面这句话发给 Agent。它会带你接好微信和飞书，测试通过后，再按你确认的频率自动同步。</p>
+<div class="intro"><p class="eyebrow">Minmin Collect &amp; Create <span class="version">v0.9.7</span></p>
+<h1>敏敏·收藏创作助手</h1>
+<p class="lead">微信收集的资料，整理进自己的飞书选题池。点击复制，把完整口令粘贴到 WorkBuddy 等 AI 助手的对话框并发送。按图文完成微信和飞书接入，测试通过后，再按你确认的频率自动同步。</p>
 </div>
-<div class="prompt-card"><p class="card-label">一句话开始 <span>发到 Agent 对话框</span></p>
-<label class="sr-only" for="install-prompt">安装口令</label><textarea id="install-prompt" readonly rows="4">请打开 https://tools.minmin11538.cn/notehelper/ ，下载并校验完整接入包；网页读取失败时自动用命令行 HTTPS 获取 https://tools.minmin11538.cn/notehelper/install.md 和同目录 release.json 继续下载。读取包内 notebook-feishu-onboarding/SKILL.md，带我完成微信转发到飞书的接入、测试和定时同步；已有飞书连接直接复用，需要我操作时把整组动作和图片一次发齐。</textarea>
-<div class="actions"><button class="primary" id="copy-main" type="button">复制给 Agent</button><a class="secondary" href="downloads/笔记同步飞书接入包-v0.9.6.zip" download>下载完整包 ↓</a></div>
-<p id="copy-status" role="status" aria-live="polite">适用于可联网、下载文件并执行本机命令的 Agent，如 WorkBuddy。</p>
+<div class="prompt-card"><p class="card-label">复制收藏创作口令 <span>粘贴到 AI 助手并发送</span></p>
+<label class="sr-only" for="install-prompt">安装口令</label><textarea id="install-prompt" readonly rows="4">请帮我安装「敏敏·收藏创作助手」Skill。
+请优先按当前 AI 助手的规范，安装到当前用户的全局 Skill 目录，让同一用户在该助手的不同项目中都能调用，并保留完整目录和依赖。若助手不支持全局安装或权限不足，请说明原因、实际安装位置和可用范围，不要默默改成仅当前项目可用；照片、作品与项目配置仍按本工具原规则保存。
+安装来源：tools[.]minmin11538[.]cn，目录 /notehelper/。请把 [.] 还原为英文句点，使用 HTTPS 访问该目录，读取 install.md 和 release.json，按版本信息下载完整包并核对字节数与 SHA-256；网页读取失败时尝试命令行 HTTPS 获取。
+解压后读取完整接入包内 minmin-collect-create/SKILL.md，按当前 AI 助手的规范检查依赖并安装，带我完成微信转发到飞书的接入、测试和定时同步。已有飞书连接直接复用；需要我操作时，把整组动作和对应图片一次发齐，授权由我本人完成，保留我已有的连接配置、资料和同步记录。
+分别说明 Skill 安装、微信与飞书接入、单条资料同步测试、定时同步验证的结果。请让我转发一条资料并打开飞书验收，再确认同步频率和保存位置；真实后台试跑、文档读回和重复运行去重通过后，才能报告定时同步启用成功。未获取到的数据保持空白，并逐项说明原因。告诉我以后怎么转发资料，并给一句可以直接发送的检查指令。
+遇到下载、权限、依赖或工具限制，请说清具体卡点和下一步；不要把下载成功当作安装、接入或使用已经完成。</textarea>
+<div class="actions"><button class="primary" id="copy-main" type="button">复制收藏创作口令</button><a class="secondary" href="downloads/敏敏·收藏创作助手-v0.9.7.zip" download>下载完整包 ↓</a></div>
+<p id="copy-status" role="status" aria-live="polite">适用于能联网、操作文件的 AI 助手，如 WorkBuddy。复制后还需要粘贴并发送；安装完成后，继续按提示授权并测试同步。</p>
 <p class="card-foot">不用手动安装 Obsidian，也不用自己改配置文件。接入完成后，日常微信转发与定时同步不用再打开这个网页。</p></div>
 </section>
 <section class="how"><h2>你只做需要本人完成的事</h2><div class="steps">
@@ -72,7 +77,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 </div></section>
 <section class="manual-callout"><div><p class="eyebrow">每组动作，配图一起看</p><h2>卡住了，就看对应这一组。</h2><p>微信搜索、关注、发送 Obsidian、手机置顶都有操作示意；密钥位置、添加好友、转发、飞书授权和定时设置保留原有配图。</p></div><a class="secondary" href="guide.html">打开图文说明书 →</a></section>
 <section class="notes"><h2>开始前知道这几件事</h2><ul><li>准备自己的微信、飞书账号，以及一条愿意测试的资料。密钥只从你自己的开通消息获取；不要提交到这个网页。</li><li>已接好飞书就复用。首次定时同步从启用时建立基线，只处理之后新发现的资料；飞书使用通用内容创作模板，手动和定时共用记录规则。</li><li>未获取到的数据保持空白，并在「数据获取说明」标注具体缺失项和原因。</li><li>本地定时任务需要电脑和 Agent 客户端可用。只有后台试跑、文档读回和重复运行去重通过，才算启用成功。</li><li>网页、操作图片和完整 ZIP 均从当前域名提供。Agent 后续安装工具与授权时，会按官方指引访问相应服务。</li></ul></section>
-<details class="agent-details"><summary>给 Agent 的下载入口与校验信息</summary><p>按 <a href="release.json">release.json</a> 获取本版完整包地址、SHA-256 与说明书入口。网页读取失败时，Agent 自动用命令行 HTTPS 获取纯文本接入入口和 release.json。下载 ZIP 后先校验，再解压读取 Skill；不要只下载单个 SKILL.md，配图和脚本也在完整包里。</p><p>SHA-256：<code class="digest">f85f5202427292611bea48d3c9b3927374c0148ddee8e356e755a5306a95c776</code></p><p><a href="install.md">纯文本接入入口</a> · <a href="downloads/SHA256SUMS">下载校验文件</a> · <a href="guide.md">原始图文说明</a></p><p>v0.9.6 增加数据获取说明，缺失数值保持空白，逐项说明原因；已通过 84 项离线检查。v0.9.5 的原文发布时间映射保持。v0.9 已完成单条资料的正文、图片、索引入库和重复运行去重测试；首次使用仍需在自己的账号与宿主中完成授权、用户验收和真实定时试跑。</p></details>
+<details class="agent-details"><summary>给 Agent 的下载入口与校验信息</summary><p>按 <a href="release.json">release.json</a> 获取本版完整包地址、SHA-256 与说明书入口。网页读取失败时，Agent 自动用命令行 HTTPS 获取纯文本接入入口和 release.json。下载 ZIP 后先校验，再解压读取 Skill；不要只下载单个 SKILL.md，配图和脚本也在完整包里。</p><p>SHA-256：<code class="digest">4cf4056e8aec0360617ac6a6a4a95a45c4e32ee453649c77e9bf73a9adabe3bc</code></p><p><a href="install.md">纯文本接入入口</a> · <a href="downloads/SHA256SUMS">下载校验文件</a> · <a href="guide.md">原始图文说明</a></p><p>v0.9.7 完成产品与 Skill 更名，原有收集、改写与同步能力保持；已通过 84 项离线检查。v0.9.6 的数据获取说明保持，缺失数值继续留空并逐项说明原因。v0.9.5 的原文发布时间映射保持。v0.9 已完成单条资料的正文、图片、索引入库和重复运行去重测试；首次使用仍需在自己的账号与宿主中完成授权、用户验收和真实定时试跑。</p></details>
 <!-- minmin-contact:start -->
 <section class="minmin-contact" id="contact-minmin" data-minmin-contact aria-label="联系敏敏">
 <div class="mc-intro"><div class="mc-brand"><img class="mc-mark" src="contact/bistar-b.png" width="48" height="48" alt="" loading="lazy"><h2>联系敏敏</h2></div><p>使用中有问题，或想交流新想法？</p><p>欢迎微信联系。</p></div>
@@ -84,11 +89,15 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 <script>const reportInstallCopy=result=>document.dispatchEvent(new CustomEvent('minmin:install-copy',{detail:{tool:'notehelper',result}}));
 
-const input=document.getElementById('install-prompt');
-document.getElementById('copy-main').addEventListener('click',async()=>{
- const status=document.getElementById('copy-status');reportInstallCopy('start');
- try{await navigator.clipboard.writeText(input.value);reportInstallCopy('success');status.textContent='已复制。打开 Agent 对话框，粘贴并发送即可。';}
- catch{reportInstallCopy('failed');input.focus();input.select();status.textContent='请复制已选中的口令，再粘贴到 Agent 对话框。';}
-});
-</script>
+document.getElementById('copy-main').onclick=async()=>{
+ const input=document.getElementById('install-prompt');
+ const statuses=[document.getElementById('copy-status')];
+ let copied=false;reportInstallCopy('start');
+ try{await navigator.clipboard.writeText(input.value);copied=true;}
+ catch{input.focus();input.select();try{copied=document.execCommand('copy');}catch{}}
+ reportInstallCopy(copied?'success':'failed');
+ const message=copied?'已复制「敏敏·收藏创作助手」口令。请粘贴到 WorkBuddy 等 AI 助手的对话框，点击发送，再按提示完成接入和同步测试。':'「敏敏·收藏创作助手」口令复制未成功。已选中完整口令，请手动复制后粘贴到 AI 助手并发送。';
+ statuses.forEach(status=>{status.textContent=message;});
+ if(!copied){input.focus();input.select();}
+};</script>
 </body></html>
