@@ -5,55 +5,18 @@
 <title>敏敏·收藏创作助手｜Minmin Collect &amp; Create</title>
 <meta name="description" content="敏敏·收藏创作助手（Minmin Collect &amp; Create）：微信收集、一句话拉取、飞书选题管理与交互式改写。含完整说明书、操作图片与 v0.9.7 下载包。">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="shared-header.css?v=20261024-five"><script src="/minmin-tool-stats-20261026.js?v=copy-20261026" defer></script>
+<script src="/minmin-tool-stats-20261026.js?v=copy-20261026" defer></script>
 <link rel="stylesheet" href="contact/contact-v1.css">
 <script src="contact/contact-v1.js" defer></script>
 <!-- minmin-install-guide:start -->
 <link rel="stylesheet" href="contact/install-guide-20261026.css">
 <script src="contact/install-guide-20261026.js?v=20261102-collect-create" defer></script>
 <!-- minmin-install-guide:end -->
-</head>
-<body class="readme-layout">
-<!-- minmin-home-return:start -->
-<style>
-.minmin-home-return{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e4e5df;color:#252821;font:14px/1.5 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
-.minmin-home-return[hidden]{display:none!important}
-.minmin-home-return-inner{max-width:1240px;margin:0 auto;padding:10px 32px}
-.minmin-home-return a{display:inline-block;color:inherit;text-decoration:none;font:inherit;font-weight:600}
-.minmin-home-return a:hover{text-decoration:underline;text-underline-offset:4px}
-.minmin-home-return a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
-@media(max-width:900px){.minmin-home-return-inner{padding:10px 20px}}
-</style>
-<div class="minmin-home-return" hidden><div class="minmin-home-return-inner"><a data-minmin-home-return>← 返回敏敏主页</a></div></div>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const key='minmin-home-return-v1';
-  function approvedHome(value){
-    try{
-      const url=new URL(value);
-      const local=url.protocol==='http:'&&['127.0.0.1','localhost'].includes(url.hostname)&&url.port==='8138'&&url.pathname==='/minmin-home.html';
-      const publicHome=(url.origin==='https://tools.minmin11538.cn'&&['/home/','/minmin-home.html'].includes(url.pathname))||(url.origin==='https://me.minmin11538.cn'&&url.pathname==='/');
-      if(url.username||url.password||(!local&&!publicHome))return null;
-      url.search='';url.hash='toolbox';return url.href;
-    }catch{return null;}
-  }
-  const supplied=new URL(location.href).searchParams.get('return_to');
-  let home=approvedHome(supplied);
-  if(!home&&supplied===null){try{home=approvedHome(sessionStorage.getItem(key));}catch{}}
-  if(!home)return;
-  try{sessionStorage.setItem(key,home);}catch{}
-  const link=document.querySelector('[data-minmin-home-return]');
-  link.href=home;document.querySelector('.minmin-home-return').hidden=false;
-  document.querySelectorAll('.minmin-products a').forEach(link=>{
-    const url=new URL(link.href,location.href);
-    if(url.origin!==location.origin||!['/covers/','/matrix/','/notehelper/','/stickers/','/ip/'].includes(url.pathname))return;
-    url.searchParams.set('return_to',home);link.href=url.href;
-  });
-});
-</script>
-<!-- minmin-home-return:end -->
-<header class="minmin-header" style="--nav-accent:#0969da;--nav-tint:#f6f8fa;--nav-muted:#59636e;--nav-line:#d1d9e0"><div class="minmin-header-row"><a class="minmin-brand" href="/notehelper/">敏敏 <span>/ 收藏创作助手</span></a><nav class="minmin-products" aria-label="敏敏的工具"><a href="/notehelper/" aria-current="page">收藏创作助手</a><a href="/matrix/">矩阵工作台</a><a href="/covers/">封面工作室</a><a href="/stickers/">真人表情包</a><a href="/ip/">个人 IP 形象</a></nav></div><nav class="minmin-local" aria-label="当前工具"><a href="guide.html">图文说明书 ↗</a><a href="minmin-collect-create/references/recording-rules.html">模板与记录规则 ↗</a></nav></header>
-<main>
+<link rel="stylesheet" href="shared-header.css?v=20261121-unified"></head>
+<body class="readme-layout minmin-tool-page">
+
+<header class="minmin-brand-header"><div class="minmin-header-main"><a class="brand-home" href="https://me.minmin11538.cn/" aria-label="敏敏主页 · Growth in Public"><img class="brand-logo" src="https://tools.minmin11538.cn/opening/brand/growth-in-public-logo.webp" alt="Growth in Public，红黄双彗星官方Logo" width="1330" height="665" fetchpriority="high"></a><nav class="minmin-tool-nav" aria-label="敏敏的工具"><a href="/opening/" aria-label="开头skill">开头skill</a><a href="/notehelper/" aria-current="page" aria-label="敏敏·收藏创作助手">收藏创作</a><a href="/cards/" aria-label="敏敏矩阵工作台">矩阵工作台</a><a href="/covers/" aria-label="敏敏封面工作室">封面工作室</a><a href="/stickers/" aria-label="真人互动表情包">真人表情包</a><a href="/ip/" aria-label="个人 IP 形象">个人 IP 形象</a></nav><a id="back-home" class="home-return" aria-label="返回敏敏主页" href="https://me.minmin11538.cn/#toolbox"><span aria-hidden="true">←</span>返回主页</a></div></header>
+<main><nav class="tool-page-links" aria-label="当前工具"><a href="guide.html">图文说明书 ↗</a><a href="minmin-collect-create/references/recording-rules.html">模板与记录规则 ↗</a></nav>
 <section class="hero">
 <div class="intro"><p class="eyebrow">Minmin Collect &amp; Create <span class="version">v0.9.7</span></p>
 <h1>敏敏·收藏创作助手</h1>
@@ -100,4 +63,6 @@ document.getElementById('copy-main').onclick=async()=>{
  statuses.forEach(status=>{status.textContent=message;});
  if(!copied){input.focus();input.select();}
 };</script>
-</body></html>
+<script data-minmin-navigation="20261121">/* Shared navigation; all products retain the validated home destination. */
+(()=>{const anchor=document.querySelector('#back-home');if(!anchor)return;let home='https://me.minmin11538.cn/#toolbox';try{const raw=new URL(location.href).searchParams.get('return_to');const cached=sessionStorage.getItem('minmin-home-return-v1');const t=new URL(raw||cached||home);if(t.origin==='https://me.minmin11538.cn')home=t.href}catch(e){}anchor.href=home;document.querySelectorAll('.minmin-tool-nav a').forEach(a=>{const u=new URL(a.href,location.href);u.searchParams.set('return_to',home);a.href=u.href});})();
+</script></body></html>
